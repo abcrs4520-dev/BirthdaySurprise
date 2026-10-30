@@ -150,7 +150,7 @@ if (page === "cake") {
 
       if (message) {
         message.textContent =
-          "Nuv korukunnadhi jaragaali ani nenu kuda korukuntunna 🫣❤️ .. Next page neekosam pedda surprise ready ga undi";
+          "Nuv korukunnadhi jaragaali ani nenu kuda korukuntunna 🫣❤️ ..";
       }
 
       blow.textContent = "Devudiki pampinchesa nee wish ✨";
@@ -227,7 +227,7 @@ if (page === "music") {
         $("#record")?.classList.add("playing");
 
         $("#music-status").textContent =
-          "Just you, me, and this song 💗 (emaina gurthosthunnaya 🫣)";
+          "(emaina gurthosthunnaya 🫣)";
 
       } catch {
         $("#music-status").textContent =
@@ -240,6 +240,24 @@ if (page === "music") {
       $("#record")?.classList.remove("playing");
     });
   }
+}
+
+/* MUSIC PAGE: REVEAL OUR POLAROID WHEN SONG PLAYS */
+const ourSongAudio = document.querySelector(
+  '#our-song-audio, audio[src*="our-song.mp3"], audio source[src*="our-song.mp3"]'
+);
+
+const polaroidReveal = document.getElementById("polaroid-reveal");
+
+if (ourSongAudio && polaroidReveal) {
+  const audioElement =
+    ourSongAudio.tagName.toLowerCase() === "source"
+      ? ourSongAudio.parentElement
+      : ourSongAudio;
+
+  audioElement.addEventListener("play", () => {
+    polaroidReveal.hidden = false;
+  });
 }
 
 // PAGE 9: LOVE LETTER
@@ -259,7 +277,7 @@ if (page === "letter") {
       envelope.textContent = "❤️";
 
       const message =
-        "Wish u a very very hpyyyy bdayyyyy to uu bangaram❤️. naa bujjikondaa naa bangarukondaa .. ummahhh ummahhh ummahhh😘😘😘😘😘😘😘😘😘😘 inka boldu hugs kuda neeku .. for(int i=22;i<=100;i++){ System.out.println('Happy Birthday Pichodaa'+i);} appude 'i' years ochesay neeku.. chala chala chaaaaaaaaalaaa pedda position ki velli chala dabbul sampandinchali nuvvuu uncle ninnu chusi proud feel ayye day osthadi ani naaku telsu and nuv pakka chesthav kuda ala..  manchiga undu manchiga nerchuko new tngs, Devudu edoka kashtaalu thappakunda pedathadu kada nuv mentally spr strong ani ninnu physically weak cheddam anukuntnadu ala ani nuv weak aypokudadu.. baaga thinu baaga water thaagu baaaaaga healthy ga undu 🫂.. healthy man avvali.. 💗 ninnu meet ayyaka 1st tym anukunta gift ivvatle nenu🙁.. ala ani chinna bday wish tho odileyali ani ledu andukani ila alochincha hope neek nachindhi anukuntna.. ekkadaina over express chesi unte (This is letter from ur Ammu to my Pichoda ani gurthupetko) future lo nee anni bdays ki wish chese situations raakpovachu but remember naa brain chala sharp dates gurthupetkodam lo nee evry bday naak gurthuntadi .. if nen wish cheyle ani anipisthe ee letter malli chaduvu evry year nee bday ki naa wishes indulo untay anduke for loop petta 🥰.. and nen spr strong ga unta naa gurinchi bayapadaku evar help lekunda evar meedha depend avkunda life ela lead cheyyali nerpinchav and nen alane unta🦁💪..Sry ninnu sarigga chuskolenanduku🥺 .. Tnq nannu chala baa chuskunanduku🫂.. and chaal ippatike ekkuv maatladesa 'I Love You❤️' 'Miss you so much nanna🙁🥺'";
+        "Wish u a very very hpyyyy bdayyyyy to uu bangaram❤️. naa bujjikondaa naa bangarukondaa .. ummahhh ummahhh ummahhh😘😘😘😘😘😘😘😘😘😘 inka boldu hugs kuda neeku .. for(int i=22;i<=100;i++){ System.out.println('Happy Birthday Pichodaa');} appude 'i' years ochesay neeku.. chala chala chaaaaaaaaalaaa pedda position ki velli chala dabbul sampandinchali nuvvuu uncle ninnu chusi proud feel ayye day osthadi ani naaku telsu and nuv pakka chesthav kuda ala..  manchiga undu manchiga nerchuko new tngs, Devudu edoka kashtaalu thappakunda pedathadu kada nuv mentally spr strong ani ninnu physically weak cheddam anukuntnadu ala ani nuv weak aypokudadu.. baaga thinu baaga water thaagu baaaaaga healthy ga undu 🫂.. healthy man avvali.. 💗 ninnu meet ayyaka 1st tym anukunta gift ivvatle nenu🙁.. ala ani chinna bday wish tho odileyali ani ledu andukani ila alochincha hope neek nachindhi anukuntna.. ekkadaina over express chesi unte (This is a little gift from ur Ammu to my Pichoda ani gurthupetko) future lo nee anni bdays ki wish chese situations raakpovachu but remember naa brain chala sharp dates gurthupetkodam lo nee evry bday naak gurthuntadi .. if nen wish cheyle ani anipisthe ee letter malli chaduvu evry year nee bday ki naa wishes indulo untay anduke for loop petta 🥰.. and nen spr strong ga unta naa gurinchi bayapadaku🦁💪..Chorriee🥺 .. Tnqqq🫂.. Best of luck to ur future🫂 and chaal ippatike ekkuv maatladesa 'I Love You❤️' 'Miss you so much nanna🙁🥺' Byee Bangarukonda bujjikondaa.. Next page lo assalaina real surprise ready ga undi nee kosam chala tym theeskuni chala kashtapadi chesa hope u like it.. ";
         
       const target = $("#typed-letter");
 
