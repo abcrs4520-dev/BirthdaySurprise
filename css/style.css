@@ -1914,3 +1914,62 @@ body[data-page="gift"] {
     font-size: 0.65rem;
   }
 }
+
+/* MUSIC PAGE: POLAROID PHOTO REVEAL */
+.polaroid-reveal {
+  margin: 28px auto 10px;
+  width: min(290px, 90%);
+  text-align: center;
+  animation: polaroidAppear 900ms ease both;
+}
+
+.polaroid-reveal[hidden] {
+  display: none;
+}
+
+.polaroid-frame {
+  background: #fffaf2;
+  padding: 12px 12px 8px;
+  box-shadow: 0 12px 35px rgba(255, 120, 190, 0.22);
+  transform: rotate(-3deg);
+  border-radius: 2px;
+}
+
+.polaroid-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #eee;
+}
+
+.polaroid-caption {
+  margin: 12px 0 5px;
+  color: #433247;
+  font-family: Georgia, serif;
+  font-size: 17px;
+}
+
+.polaroid-message {
+  color: #ffe0f0;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-top: 22px;
+}
+
+@keyframes polaroidAppear {
+  from {
+    opacity: 0;
+    transform: translateY(22px) rotate(-7deg) scale(.88);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .polaroid-reveal {
+    animation: none;
+  }
+}
